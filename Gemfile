@@ -43,6 +43,9 @@ gem 'browserify-rails', '~> 1.5.0'
 # Use React component in your Rails app
 gem 'react-rails'
 
+# Use bcrypt for safe password management
+gem 'bcrypt'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
