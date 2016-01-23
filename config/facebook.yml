@@ -1,0 +1,7 @@
+development:
+  app_id: #your Facebook app_id
+  secret: #your facebook app_secret
+
+production:
+  app_id: #your Facebook app_id
+  secret: #your facebook app_secret
