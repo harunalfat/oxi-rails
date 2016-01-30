@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
-  get 'users/new'
+  # You can have the root of your site routed with "root"
+  root to: 'homes#index'
+  get 'auth/facebook', as: "auth_provider"
+  get 'auth/facebook/callback', to: 'homes#login'
+  get 'logout', to: 'homes#logout'
 
-  resources :posts, only: :index
+  get 'api/members', to: 'api#show_users'
+  get 'api/me', to: 'api#show_current_user'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-
-  # You can have the root of your site routed with "root"
-   root 'posts#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

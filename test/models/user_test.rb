@@ -6,8 +6,7 @@ class UserTest < ActiveSupport::TestCase
   # end
 
   def setup
-    @user = User.new(name: "Example User", email: "harunalfat@gmail.com",
-                     password: "foobared", password_confirmation: "foobared")
+    @user = User.new(name: "Example User", email: "harunalfat@gmail.com", facebook_id: "891124567", is_verified: false)
   end
 
   test "should be valid" do
@@ -59,14 +58,16 @@ class UserTest < ActiveSupport::TestCase
     assert_not duplicate_user.valid?
   end
 
-  test "password should be present (nonblank)" do
-    @user.password = @user.password_confirmation = " " * 6
+  test "facebook id should be present" do
+    @user.facebook_id = " "
     assert_not @user.valid?
   end
 
-  test "password should have a minimum length" do
-    @user.password = @user.password_confirmation = "a" * 7
-    assert_not @user.valid?
+  test "facebook id should be unique" do
+    duplicate_user = @user.dup
+    duplicate_user.facebook_id = @user.facebook_id
+    @user.save
+    assert_not duplicate_user.valid?
   end
 
 end

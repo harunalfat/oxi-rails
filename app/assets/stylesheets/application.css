@@ -12,4 +12,11 @@
  *
  *= require_tree .
  *= require_self
+ *= require pure
+ *= require grids-responsive
+ *= require polaroid
+ *= require spinner
+ *= require popup
+ *= require side-menu
+ *= require marketing
  */

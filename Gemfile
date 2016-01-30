@@ -28,6 +28,13 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+# Use Facebook oauth easily
+gem 'omniauth-facebook'
+# Use Facebook API easily
+gem 'koala'
+# Use pure css
+gem 'pure-css-rails'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

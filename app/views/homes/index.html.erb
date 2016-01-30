@@ -1,0 +1,9 @@
+<% if current_user %>
+  <% if verified? %>
+    <%= react_component('Layout',{prerender: true})%>
+  <% else %>
+    <%= react_component('NotVerified',{prerender: true})%>
+  <% end %>
+<% else %>
+  <%= react_component('Landing')%>
+<% end %>
