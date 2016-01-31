@@ -92,7 +92,6 @@ GEM
     multi_json (1.11.2)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
-    mysql2 (0.3.20)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
     oauth2 (1.0.0)
@@ -109,6 +108,7 @@ GEM
     omniauth-oauth2 (1.4.0)
       oauth2 (~> 1.0)
       omniauth (~> 1.2)
+    pg (0.18.4)
     pure-css-rails (0.6.0)
     rack (1.6.4)
     rack-test (0.6.3)
@@ -197,8 +197,8 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   koala
-  mysql2 (~> 0.3.18)
   omniauth-facebook
+  pg
   pure-css-rails
   rails (= 4.2.1)
   rails_12factor

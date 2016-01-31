@@ -13,19 +13,22 @@
 
 ActiveRecord::Schema.define(version: 20160130235937) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "users", force: :cascade do |t|
-    t.string   "name",        limit: 255
-    t.string   "email",       limit: 255
-    t.datetime "created_at",                                null: false
-    t.datetime "updated_at",                                null: false
-    t.string   "facebook_id", limit: 255
-    t.boolean  "is_verified", limit: 1,     default: false
-    t.string   "pob",         limit: 255
+    t.string   "name"
+    t.string   "email"
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.string   "facebook_id"
+    t.boolean  "is_verified", default: false
+    t.string   "pob"
     t.date     "dob"
-    t.string   "address",     limit: 255
-    t.string   "phone",       limit: 255
-    t.string   "tagline",     limit: 255
-    t.text     "about",       limit: 65535
+    t.string   "address"
+    t.string   "phone"
+    t.string   "tagline"
+    t.text     "about"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

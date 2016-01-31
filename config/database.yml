@@ -1,11 +1,11 @@
 default: &default
-  adapter: mysql2
-  encoding: utf8
+  adapter: postgresql
+  encoding: unicode
   reconnect: false
   database: oxi-rails
   pool: 5
-  username: root
-  password:
+  username: postgres
+  password: password
   host: localhost
 
 development:
