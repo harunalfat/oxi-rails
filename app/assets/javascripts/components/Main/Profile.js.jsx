@@ -30,7 +30,7 @@ var Profile = React.createClass({
             <div className="pure-u-1 pure-u-md-1-2">
               <div className="l-box">
                 <img className="pure-img-responsive"
-                  src={"http://graph.facebook.com/" +
+                  src={"https://graph.facebook.com/" +
                   this.state.user.facebook_id +
                   "/picture?width=500"}
                 />
@@ -135,7 +135,7 @@ var Profile = React.createClass({
             <div className="pure-u-1 pure-u-md-1-2">
               <div className="l-box">
                 <img className="pure-img-responsive"
-                  src={"http://graph.facebook.com/" +
+                  src={"https://graph.facebook.com/" +
                   this.state.user.facebook_id +
                   "/picture?width=500"}
                 />
