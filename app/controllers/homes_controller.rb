@@ -13,7 +13,9 @@ class HomesController < ApplicationController
     facebook_id = tmp_session['uid']
     user = User.where(facebook_id: facebook_id).first
     unless user
-      me = User.koala(tmp_session['credentials']).get_object("me")
+      me = User.koala(tmp_session['credentials']).get_object(
+        "me?fields=name,email,birthday,hometown,location,bio"
+      );
       dob = Date.strptime(me['birthday'],"%m/%d/%Y")
       User.create(
         name: me['name'],
