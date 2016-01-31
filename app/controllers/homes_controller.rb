@@ -9,6 +9,7 @@ class HomesController < ApplicationController
   end
 
   def login
+    debugger;
     tmp_session = request.env['omniauth.auth']
     facebook_id = tmp_session['uid']
     user = User.where(facebook_id: facebook_id).first
@@ -16,18 +17,37 @@ class HomesController < ApplicationController
       me = User.koala(tmp_session['credentials']).get_object(
         "me?fields=name,email,birthday,hometown,location,bio"
       );
-      dob = Date.strptime(me['birthday'],"%m/%d/%Y")
-      User.create(
+      puts me.as_json
+      if me['birthday']
+        dob = Date.strptime(me['birthday'],"%m/%d/%Y")
+      else
+        dob = Date.today
+      end
+
+      if me['hometown']
+        hometown = me['hometown']['name']
+      else
+        hometown = nil
+      end
+
+      if me['location']
+        hometown = me['location']['name']
+      else
+        hometown = nil
+      end
+
+      newUser = User.create(
         name: me['name'],
         email: me['email'],
         facebook_id: facebook_id,
         is_verified: false,
-        pob: me['hometown']['name'],
+        pob: hometown,
         dob: dob,
-        address: me['location']['name'],
+        address: location,
         tagline: me['name'],
         about: me['bio']
       )
+      newUser.save()
     end
     session[:user] = tmp_session
     redirect_to root_path
