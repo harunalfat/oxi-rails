@@ -2,7 +2,9 @@
   "name": "oxi-rails",
   "dependencies": {
     "browserify": "~> 10.2.4",
-    "browserify-incremental": "^3.0.1"
+    "browserify-incremental": "^3.0.1",
+    "reactify": "^1.1.0",
+    "react": "^0.14.7"
   },
   "license": "MIT",
   "engines": {
