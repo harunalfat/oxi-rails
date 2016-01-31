@@ -13,7 +13,6 @@ var MainTab = React.createClass({
         members: result
       });
     }.bind(this));
-
   },
   componentWillUnmount: function() {
     this.serverRequest.abort();

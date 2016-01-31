@@ -37,9 +37,7 @@ var OtherProfile = React.createClass({
               <h3 className="content-subhead">
                 {this.props.user.tagline}
               </h3>
-              <p align="justify">
-                {this.props.user.about}
-              </p>
+              <span dangerouslySetInnerHTML={this.createMarkup()}/>
             </div>
           </div>
         </div>
@@ -82,7 +80,7 @@ var OtherProfile = React.createClass({
           <div className="pure-g">
             <div className="pure-u-1">
               <button className="pure-button pure-button-primary pure-right" onClick={this.close}>
-                Close
+                Back
               </button>
             </div>
           </div>
@@ -92,6 +90,12 @@ var OtherProfile = React.createClass({
   },
 
   close(){
-    $(".popup_close", window.parent.document).trigger("click");
+    window.history.back();
+  },
+
+  createMarkup(){
+    return {
+      __html: this.props.user.about
+    };
   }
 });
