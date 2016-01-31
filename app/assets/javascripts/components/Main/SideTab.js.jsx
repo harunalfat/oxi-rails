@@ -21,8 +21,7 @@ var SideTab = React.createClass({
                 <ul className="pure-menu-list">
                     <li className="pure-menu-item pure-menu-selected"><a href="#" onClick={this._goToMembers} className="pure-menu-link">Members</a></li>
                     <li className="pure-menu-item"><a href="#" onClick={this._goToProfile} className="pure-menu-link">My Profile</a></li>
-                    <li className="pure-menu-item"><a href="#" onClick={this._goToMembers} className="pure-menu-link">Services</a></li>
-                    <li className="pure-menu-item"><a href="#" onClick={this._goToMembers} className="pure-menu-link" onClick={this.logoutClick}>Logout</a></li>
+                    <li className="pure-menu-item"><a href="#" className="pure-menu-link" onClick={this.logoutClick}>Logout</a></li>
                 </ul>
                 <div className="load-container load8">
                   <div id="spinner" className="off"/>

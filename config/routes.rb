@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   get 'logout', to: 'homes#logout'
 
   get 'api/members', to: 'api#show_users'
+  get 'members/:facebook_id', to: 'users#find'
   get 'api/me', to: 'api#show_current_user'
+  post 'api/me/update', to: 'api#update'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

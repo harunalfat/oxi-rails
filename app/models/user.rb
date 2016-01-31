@@ -14,4 +14,5 @@ class User < ActiveRecord::Base
             uniqueness: {case_sensitive: false}
 
   validates :facebook_id, presence: true, uniqueness: true
+
 end

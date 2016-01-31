@@ -16,12 +16,9 @@ a.pure-button-primary-land {
     font-size: 120%;
 }
 
-
-/*
- * -- MENU STYLES --
- * I want to customize how my .pure-menu looks at the top of the page
- */
-
+.pure-form .pure-control-group input{
+  width: 75%;
+}
 /*
  * -- SPLASH STYLES --
  * This is the blue top section that appears on the page.

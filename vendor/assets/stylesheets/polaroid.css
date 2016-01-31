@@ -1,10 +1,8 @@
 ul.polaroids li{
-  display:inline;
 }
 ul.polaroids a{
   background:#fff;
-  display:inline;
-  float:left;
+  float: left;
   margin:0 30px 27px 30px;
   width:auto;
   padding:10px 10px 15px;
@@ -30,7 +28,7 @@ ul.polaroids li{
 }
 ul.polaroids img{
   display:block;
-  width: 100%;
+  width: auto;
   height: auto;
   margin-bottom:12px;
 }

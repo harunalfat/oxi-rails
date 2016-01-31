@@ -13,9 +13,19 @@ class HomesController < ApplicationController
     facebook_id = tmp_session['uid']
     user = User.where(facebook_id: facebook_id).first
     unless user
-      name = tmp_session['extra']['name']
-      email = tmp_session['extra']['email']
-      User.create(name: name, email:email, facebook_id: facebook_id, is_verified: false)
+      me = User.koala(tmp_session['credentials']).get_object("me")
+      dob = Date.strptime(me['birthday'],"%m/%d/%Y")
+      User.create(
+        name: me['name'],
+        email: me['email'],
+        facebook_id: facebook_id,
+        is_verified: false,
+        pob: me['hometown']['name'],
+        dob: dob,
+        address: me['location']['name'],
+        tagline: me['name'],
+        about: me['bio']
+      )
     end
     session[:user] = tmp_session
     redirect_to root_path

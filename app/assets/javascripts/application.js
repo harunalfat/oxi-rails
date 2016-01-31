@@ -15,7 +15,9 @@
 //= require turbolinks
 //= require react
 //= require react_ujs
+//= require bootstrap.min
 //= require components
+//= require jquery.popup.min
 //= require throttle
-//= require jquery.popup
+//= require months
 //= require_tree .

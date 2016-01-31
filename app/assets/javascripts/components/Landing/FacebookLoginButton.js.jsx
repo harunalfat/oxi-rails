@@ -7,7 +7,7 @@ var FacebookLoginButton = React.createClass({
   render(){
     return (
       <a id="flb" href="#" className="pure-button-land pure-button-primary-land" onClick={this.loginClick}>
-        Login with Facebook
+        Facebook Login
       </a>
     );
   }

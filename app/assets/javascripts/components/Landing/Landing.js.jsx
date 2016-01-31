@@ -5,7 +5,7 @@ var Landing = React.createClass({
           <div className="splash">
               <h1 className="splash-head">OXI-DB</h1>
               <p className="splash-subhead">
-                  Keep Us Connect to Each Other
+                  Keep Connected
               </p>
               <div className="load-container load8">
                 <div id="spinner" className="off"/>
