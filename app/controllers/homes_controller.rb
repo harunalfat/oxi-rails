@@ -9,7 +9,6 @@ class HomesController < ApplicationController
   end
 
   def login
-    debugger;
     tmp_session = request.env['omniauth.auth']
     facebook_id = tmp_session['uid']
     user = User.where(facebook_id: facebook_id).first
