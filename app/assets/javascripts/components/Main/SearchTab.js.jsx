@@ -18,12 +18,9 @@ var SearchTab = React.createClass({
     var wto;
     search = this.props.doSearch;
     $("input").keyup(
-      debounce(
-        function(){
-          search($("input").val())
-        },
-        300
-      )
+      function(){
+        search($("input").val())
+      }
     );
   }
 });

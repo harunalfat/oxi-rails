@@ -2,7 +2,7 @@ class ApiController < ServiceController
   def show_users
     search = params[:search]
     if search
-      user = User.where("name like ?", "%#{search}%").order(name: :asc)
+      user = User.where("upper(name) like upper(?)", "%#{search}%").order(name: :asc)
     else
       user = User.all.order(name: :asc)
     end
